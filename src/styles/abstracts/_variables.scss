@@ -1,7 +1,10 @@
 /*================================
 COLORS
 ================================*/
-$color-grey: #777;
+$color-grey: #e7e7e7;
+$color-grey-light: #f3f3f3;
+$color-grey-dark: #777;
+
 $color-white: #fff;
 $color-black: #000;
 
@@ -16,3 +19,10 @@ $color-secondary-dark: darken($color-secondary, 10%);
 $color-tertiary: #5186b4;
 $color-tertiary-light: lighten($color-tertiary, 10%);
 $color-tertiary-dark: darken($color-tertiary, 10%);
+
+/*================================
+BOX SIZES
+================================*/
+$size-small: 1rem;
+$size-medium: 3rem;
+$size-big: 5rem;

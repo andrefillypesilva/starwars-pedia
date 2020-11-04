@@ -1,0 +1,33 @@
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin default-block-top {
+    background-color: $color-grey-light;
+    border-bottom: 1px solid $color-grey;
+}
+
+@mixin default-block-bottom {
+    background-color: $color-grey-light;
+    border-top: 1px solid $color-grey;
+}
+
+@mixin default-block-item {
+    text-decoration: none;
+    position: relative;
+    padding: 1rem 5.5rem 1rem 2.5rem;
+    display: inline-block;
+    font-size: 1.4rem;
+    transition: all .2s;
+
+    i {
+        font-size: 2rem;
+        margin-left: 1rem;
+        position: absolute;
+        top: .7rem;
+    }
+}

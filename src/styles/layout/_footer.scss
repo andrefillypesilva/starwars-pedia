@@ -1,0 +1,21 @@
+.main-footer {
+    @include default-block-bottom;
+    @include clearfix;
+
+    .main-links {
+        float: left;
+
+        &__fork-us {
+            @include default-block-item;
+
+            border-bottom: .5rem solid $color-primary-dark;
+            color: $color-primary-dark;
+
+            &:hover {
+                border-color: $color-primary;
+                color: $color-primary;
+                background-color: $color-white;
+            }
+        }
+    }
+}

@@ -1,0 +1,31 @@
+.main-header {
+    @include default-block-top;
+    @include clearfix;
+
+    .main-menu {
+        float: right;
+
+        &__link {
+            @include default-block-item;
+
+            border-top: .5rem solid $color-secondary;
+            color: $color-secondary;
+
+            &:not(:first-child) {
+                border-top: .5rem solid $color-tertiary;
+                color: $color-tertiary;
+
+                &:hover {
+                    border-color: $color-tertiary-dark;
+                    color: $color-tertiary-dark;
+                }
+            }
+
+            &:hover {
+                border-color: $color-secondary-dark;
+                color: $color-secondary-dark;
+                background-color: $color-white;
+            }
+        }
+    }
+}
