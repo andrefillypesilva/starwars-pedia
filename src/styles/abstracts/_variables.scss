@@ -1,0 +1,18 @@
+/*================================
+COLORS
+================================*/
+$color-grey: #777;
+$color-white: #fff;
+$color-black: #000;
+
+$color-primary: #fee71f;
+$color-primary-light: lighten($color-primary, 10%);
+$color-primary-dark: darken($color-primary, 10%);
+
+$color-secondary: #c43d49;
+$color-secondary-light: lighten($color-secondary, 10%);
+$color-secondary-dark: darken($color-secondary, 10%);
+
+$color-tertiary: #5186b4;
+$color-tertiary-light: lighten($color-tertiary, 10%);
+$color-tertiary-dark: darken($color-tertiary, 10%);
