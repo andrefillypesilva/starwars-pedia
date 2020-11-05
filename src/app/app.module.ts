@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+// MODULES
+import { SharedModule } from './shared/shared.module';
+
 // ROUTING MODULE
 import { AppRoutingModule } from './app-routing.module';
 
@@ -17,6 +20,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
   ],
   imports: [
     BrowserModule,
+    SharedModule,
     AppRoutingModule,
   ],
   providers: [],

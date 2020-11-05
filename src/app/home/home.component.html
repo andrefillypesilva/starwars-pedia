@@ -1,16 +1,3 @@
-<header class="main-header">
-  <div class="main-menu">
-    <a href="#" class="main-menu__link"
-      >View Swapi Documentation<i
-        class="main-menu__icon icon-basic-folder-multiple"
-      ></i
-    ></a>
-    <a href="#" class="main-menu__link"
-      >View Developer Profile<i class="main-menu__icon icon-basic-info"></i
-    ></a>
-  </div>
-</header>
-
 <section class="main-section">
   <div class="main-section__search-element text-centered">
     <h1 class="heading-primary">
@@ -25,17 +12,9 @@
         <i class="icon-basic-magnifier"></i>
       </div>
       <div class="main-section__form-element--buttons-box mt-medium">
-        <a href="#" class="btn btn-secondary">Search</a>
-        <a href="#" class="btn btn-tertiary">May the Force be with be</a>
+        <a [routerLink]="" (click)="onSearch()" class="btn btn-secondary">Search</a>
+        <a [routerLink]="" class="btn btn-tertiary">May the Force be with be</a>
       </div>
     </div>
   </div>
 </section>
-
-<footer class="main-footer">
-  <div class="main-links">
-    <a href="#" class="main-links__fork-us"
-      >Fork us on GitHub<i class="main-links__icon icon-basic-life-buoy"></i
-    ></a>
-  </div>
-</footer>
