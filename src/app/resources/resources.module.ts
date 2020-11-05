@@ -12,9 +12,10 @@ import { VehiclesComponent } from './components/vehicles/vehicles.component';
 import { SpeciesComponent } from './components/species/species.component';
 import { PlanetsComponent } from './components/planets/planets.component';
 import { SharedModule } from '../shared/shared.module';
+import { ResultSearchComponent } from './components/result-search/result-search.component';
 
 @NgModule({
-  declarations: [PeopleComponent, FilmsComponent, StarshipsComponent, VehiclesComponent, SpeciesComponent, PlanetsComponent],
+  declarations: [PeopleComponent, FilmsComponent, StarshipsComponent, VehiclesComponent, SpeciesComponent, PlanetsComponent, ResultSearchComponent],
   imports: [
     CommonModule,
     ResourcesRoutingModule,

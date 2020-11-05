@@ -29,3 +29,25 @@
         }
     }
 }
+
+.internal-header {
+    border-bottom: 1px solid $color-grey;
+
+    &__form-element {
+        &--main-box {
+            position: relative;
+
+            label {
+                @extend .default-input-label;
+            }
+
+            i {
+                @extend .default-input-icon;
+            }
+        
+            input {
+                @extend .default-input;
+            }
+        }
+    }
+}

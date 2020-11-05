@@ -23,3 +23,27 @@ body {
         color: $color-grey-dark;
     }
 }
+
+.heading-logo {
+    color: $color-primary;
+    
+    &--main {
+        display: block;
+        font-size: 1.8rem;
+        line-height: 0rem;
+        font-weight: 600;
+    }
+
+    &--subtitle {
+        display: block;
+        margin-top: 1.5rem;
+        font-size: .1rem;
+        font-family: "Press Start 2P", sans-serif;
+        color: $color-grey-dark;
+        font-weight: 300;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+}
