@@ -16,7 +16,7 @@ export class PeopleComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.people$ = this.searchService.search();
+    // this.people$ = this.searchService.search();
   }
 
 }

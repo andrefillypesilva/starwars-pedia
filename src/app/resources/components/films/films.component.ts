@@ -16,6 +16,6 @@ export class FilmsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.films$ = this.searchService.search();
+    // this.films$ = this.searchService.search();
   }
 }

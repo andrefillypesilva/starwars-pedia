@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { ResultCard } from 'src/app/models/interfaces/result-card';
 import { Observable } from 'rxjs';
 
@@ -12,7 +12,8 @@ export class SearchService {
     private readonly http: HttpClient
   ) { }
 
-  search(): Observable<ResultCard[]> {
-    return this.http.get<ResultCard[]>('assets/mocks/results.json');
+  search(search: string): Observable<ResultCard[]> {
+    const queryParams = new HttpParams().append('search', search);
+    return this.http.get<ResultCard[]>('assets/mocks/results.json', { params: queryParams });
   }
 }
