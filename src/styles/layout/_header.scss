@@ -34,6 +34,7 @@
     border-bottom: 1px solid $color-grey;
     background-color: $color-white;
     transition: all .2;
+    max-height: 10.1rem;
 
     &__form-element {
         &--main-box {
