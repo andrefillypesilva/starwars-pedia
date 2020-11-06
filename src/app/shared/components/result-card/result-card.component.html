@@ -1,17 +1,14 @@
 <div class="result-card">
   <h3 class="result-card__title mb-small">
-    <a routerLink="/a-new-hope">A New Hope | Episode 4</a>
+    <a routerLink="{{ object.url }}">{{ object.title }}</a>
   </h3>
   <p class="result-card__description">
-    {{ desc | shortDescription }}
+    {{ object.description | shortDescription }}
   </p>
   <div class="result-card__links mt-small">
     <ul>
-      <li>
-        <a routerLink="/director">Director: George Lucas</a>
-      </li>
-      <li>
-        <a routerLink="/director">Producers: Gary Kurtz, Rick McCallum</a>
+      <li *ngFor="let option of object.options">
+        <a routerLink="{{ object.url }}">{{ option }}</a>
       </li>
     </ul>
   </div>
