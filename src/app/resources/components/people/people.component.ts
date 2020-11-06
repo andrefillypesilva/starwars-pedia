@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ResultCard } from 'src/app/models/interfaces/result-card';
 import { SearchService } from '../../services/search.service';
 
@@ -8,14 +9,14 @@ import { SearchService } from '../../services/search.service';
 })
 export class PeopleComponent implements OnInit {
 
-  public people: ResultCard[];
+  public people$: Observable<ResultCard[]>;
 
   constructor(
     private readonly searchService: SearchService
   ) { }
 
   ngOnInit(): void {
-    this.people = this.searchService.search();
+    this.people$ = this.searchService.search();
   }
 
 }
