@@ -1,5 +1,11 @@
 .text-centered { text-align: center; }
 
+.fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
 .m-small { margin: $size-small; }
 .mt-small { margin-top: $size-small; }
 .mb-small { margin-bottom: $size-small; }

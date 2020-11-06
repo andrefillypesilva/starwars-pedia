@@ -13,6 +13,6 @@ import { InternalHeaderComponent } from './structure/internal-header/internal-he
     CommonModule,
     RouterModule
   ],
-  exports: [HeaderComponent, FooterComponent, ShortDescriptionPipe, ResultCardComponent, InternalHeaderComponent]
+  exports: [HeaderComponent, FooterComponent, ShortDescriptionPipe, ResultCardComponent, InternalHeaderComponent],
 })
 export class SharedModule { }
