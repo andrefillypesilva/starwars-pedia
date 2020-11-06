@@ -7,15 +7,25 @@ import { ResultCardComponent } from './components/result-card/result-card.compon
 import { RouterModule } from '@angular/router';
 import { InternalHeaderComponent } from './structure/internal-header/internal-header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ResultBlockComponent } from './components/result-block/result-block.component';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, ShortDescriptionPipe, ResultCardComponent, InternalHeaderComponent],
-  imports: [
-    CommonModule,
-    RouterModule,
-    FormsModule,
-    ReactiveFormsModule
+  declarations: [
+    HeaderComponent,
+    FooterComponent,
+    ShortDescriptionPipe,
+    ResultCardComponent,
+    InternalHeaderComponent,
+    ResultBlockComponent,
   ],
-  exports: [HeaderComponent, FooterComponent, ShortDescriptionPipe, ResultCardComponent, InternalHeaderComponent],
+  imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule],
+  exports: [
+    HeaderComponent,
+    FooterComponent,
+    ShortDescriptionPipe,
+    ResultCardComponent,
+    InternalHeaderComponent,
+    ResultBlockComponent,
+  ],
 })
-export class SharedModule { }
+export class SharedModule {}

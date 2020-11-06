@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ResultCard } from 'src/app/models/interfaces/result-card';
-import { SearchService } from '../../services/search.service';
+import { PersonService } from '../../services/person.service';
 
 @Component({
   selector: 'app-people',
@@ -12,11 +12,11 @@ export class PeopleComponent implements OnInit {
   public people$: Observable<ResultCard[]>;
 
   constructor(
-    private readonly searchService: SearchService
+    private readonly personService: PersonService
   ) { }
 
   ngOnInit(): void {
-    // this.people$ = this.searchService.search();
+    this.people$ = this.personService.getPeople();
   }
 
 }

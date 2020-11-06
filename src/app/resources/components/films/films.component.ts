@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ResultCard } from 'src/app/models/interfaces/result-card';
-import { SearchService } from '../../services/search.service';
+import { FilmService } from '../../services/film.service';
 
 @Component({
   selector: 'app-films',
@@ -12,10 +12,10 @@ export class FilmsComponent implements OnInit {
   public films$: Observable<ResultCard[]>;
 
   constructor(
-    private readonly searchService: SearchService
+    private readonly filmService: FilmService
   ) { }
 
   ngOnInit(): void {
-    // this.films$ = this.searchService.search();
+    this.films$ = this.filmService.getFilms();
   }
 }

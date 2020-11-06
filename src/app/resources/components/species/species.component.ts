@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ResultCard } from 'src/app/models/interfaces/result-card';
+import { SpeciesService } from '../../services/species.service';
 
 @Component({
   selector: 'app-species',
@@ -6,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SpeciesComponent implements OnInit {
 
-  constructor() { }
+  public species$: Observable<ResultCard[]>;
+
+  constructor(
+    private readonly speciesService: SpeciesService
+  ) { }
 
   ngOnInit(): void {
+    this.species$ = this.speciesService.getSpecies();
   }
 
 }

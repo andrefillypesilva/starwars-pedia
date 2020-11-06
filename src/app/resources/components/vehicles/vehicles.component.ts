@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ResultCard } from 'src/app/models/interfaces/result-card';
+import { VehicleService } from '../../services/vehicle.service';
 
 @Component({
   selector: 'app-vehicles',
@@ -6,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VehiclesComponent implements OnInit {
 
-  constructor() { }
+  public vehicles$: Observable<ResultCard[]>;
+
+  constructor(
+    private readonly vehicleService: VehicleService
+  ) { }
 
   ngOnInit(): void {
+    this.vehicles$ = this.vehicleService.getVehicles();
   }
 
 }
