@@ -1,9 +1,9 @@
 <app-internal-header></app-internal-header>
 
 <div class="container mt-medium mb-medium">
-    <div class="row" *ngFor="let i of [1, 2, 3, 4, 5]">
+    <div class="row" *ngFor="let person of people">
         <div class="col-2-3">
-            <app-result-card></app-result-card>
+            <app-result-card [object]="person"></app-result-card>
         </div>
-    </div>      
+    </div>
 </div>
