@@ -1,0 +1,14 @@
+<div class="modal-header">
+  <h4 class="modal-title">{{ title }}</h4>
+  <button type="button" class="close" aria-label="Close" (click)="onClose()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <app-table-info [data]="data"></app-table-info>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary" (click)="onClose()">
+    Close
+  </button>
+</div>

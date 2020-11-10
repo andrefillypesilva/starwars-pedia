@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-result-block',
@@ -8,9 +8,15 @@ export class ResultBlockComponent implements OnInit {
 
   @Input() results$;
 
+  @Output() openResult = new EventEmitter<number>();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onOpenResult(id: number): void {
+    this.openResult.emit(id);
   }
 
 }

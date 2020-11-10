@@ -8,6 +8,8 @@ import { RouterModule } from '@angular/router';
 import { InternalHeaderComponent } from './structure/internal-header/internal-header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ResultBlockComponent } from './components/result-block/result-block.component';
+import { TableInfoComponent } from './components/table-info/table-info.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { ResultBlockComponent } from './components/result-block/result-block.com
     ResultCardComponent,
     InternalHeaderComponent,
     ResultBlockComponent,
+    TableInfoComponent,
+    ModalComponent,
   ],
   imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule],
   exports: [
@@ -26,6 +30,8 @@ import { ResultBlockComponent } from './components/result-block/result-block.com
     ResultCardComponent,
     InternalHeaderComponent,
     ResultBlockComponent,
+    TableInfoComponent,
+    ModalComponent
   ],
 })
 export class SharedModule {}

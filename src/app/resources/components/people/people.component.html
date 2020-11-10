@@ -1,2 +1,2 @@
 <app-internal-header></app-internal-header>
-<app-result-block [results$]="people$"></app-result-block>
+<app-result-block [results$]="people$" (openResult)="onOpenPerson($event)"></app-result-block>
