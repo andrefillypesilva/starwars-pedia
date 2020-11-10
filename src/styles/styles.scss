@@ -2,6 +2,14 @@
 @import '~bootstrap/scss/bootstrap';
 
 /*================================
+RESET BOOTSTRAP
+================================*/
+.btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus, .show > .btn-primary.dropdown-toggle:focus, .btn-secondary:not(:disabled):not(.disabled):active:focus, .btn-secondary:not(:disabled):not(.disabled).active:focus, .show > .btn-secondary.dropdown-toggle:focus, .btn-secondary:focus, .btn-secondary.focus, .btn:focus {
+    box-shadow: none;
+}
+
+
+/*================================
 STAR WARS PEDIA STYLES
 ================================*/
 

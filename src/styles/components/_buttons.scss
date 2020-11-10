@@ -13,9 +13,9 @@
         background-color: $color-primary;
         border-color: $color-primary;
 
-        &:hover {
-            background-color: $color-primary-dark;
-            border-color: $color-primary-dark;
+        &:hover, &:active, &:focus {
+            background-color: $color-primary-dark !important;
+            border-color: $color-primary-dark !important;
         }
     }
     
@@ -23,9 +23,9 @@
         background-color: $color-secondary;
         border-color: $color-secondary;
 
-        &:hover {
-            background-color: $color-secondary-dark;
-            border-color: $color-secondary-dark;
+        &:hover, &:active, &:focus {
+            background-color: $color-secondary-dark !important;
+            border-color: $color-secondary-dark !important;
         }
     }
 
@@ -33,9 +33,10 @@
         background-color: $color-tertiary;
         border-color: $color-tertiary;
 
-        &:hover {
-            background-color: $color-tertiary-dark;
-            border-color: $color-tertiary-dark;
+        &:hover, &:active, &:focus {
+            color: $color-white;
+            background-color: $color-tertiary-dark !important;
+            border-color: $color-tertiary-dark !important;
         }
     }
 
