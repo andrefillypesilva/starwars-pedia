@@ -13,6 +13,6 @@ export class PersonService {
   ) { }
 
   getPeople(): Observable<ResultCard[]> {
-    return this.http.get<ResultCard[]>('assets/mocks/results.json');
+    return this.http.get<ResultCard[]>('assets/mocks/people.json');
   }
 }
