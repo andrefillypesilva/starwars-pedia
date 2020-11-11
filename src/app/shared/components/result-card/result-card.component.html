@@ -1,10 +1,8 @@
 <div class="result-card">
   <h3 class="result-card__title mb-small">
-    <a (click)="onOpenResult()">{{ object.title }}</a>
+    <a (click)="onOpenResult()" [innerHTML]="object.title"></a>
   </h3>
-  <p class="result-card__description">
-    {{ object.description | shortDescription }}
-  </p>
+  <p class="result-card__description" [innerHTML]="shortDescription.transform(object.description, 300)"></p>
   <div class="result-card__links mt-small">
     <ul>
       <li *ngFor="let option of object.options">

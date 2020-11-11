@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ResultCard } from 'src/app/models/interfaces/result-card';
+import { ShortDescriptionPipe } from '../../pipes/short-description.pipe';
 
 @Component({
   selector: 'app-result-card',
@@ -9,6 +10,8 @@ export class ResultCardComponent implements OnInit {
 
   @Input() public object: ResultCard;
   @Output() public openResult = new EventEmitter<number>();
+
+  public shortDescription = new ShortDescriptionPipe();
 
   constructor() { }
 

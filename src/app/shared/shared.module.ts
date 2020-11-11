@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ResultBlockComponent } from './components/result-block/result-block.component';
 import { TableInfoComponent } from './components/table-info/table-info.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { ReplaceAllPipe } from './pipes/replace-all.pipe';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { ModalComponent } from './components/modal/modal.component';
     ResultBlockComponent,
     TableInfoComponent,
     ModalComponent,
+    ReplaceAllPipe,
   ],
   imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule],
   exports: [
@@ -31,7 +33,8 @@ import { ModalComponent } from './components/modal/modal.component';
     InternalHeaderComponent,
     ResultBlockComponent,
     TableInfoComponent,
-    ModalComponent
+    ModalComponent,
+    ReplaceAllPipe
   ],
 })
 export class SharedModule {}
