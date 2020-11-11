@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Observable } from 'rxjs';
 import { ResultCard } from 'src/app/models/interfaces/result-card';
+import { Vehicle } from 'src/app/models/interfaces/vehicle';
 import { VehicleService } from '../../services/vehicle.service';
 import { VehicleDetailModalComponent } from './vehicle-detail-modal/vehicle-detail-modal.component';
 
@@ -22,21 +23,23 @@ export class VehiclesComponent implements OnInit {
     this.vehicles$ = this.vehicleService.getVehicles();
   }
 
-  onOpenVehicle(): void {
-    const modal = this.modalServices.open(VehicleDetailModalComponent);
-    modal.componentInstance.object = {
-      name: 'Vehicle',
-      model: 'AUTO',
-      vehicle_class: '124',
-      manufacturer: '54',
-      length: '456',
-      cost_in_credits: '456',
-      crew: '666666',
-      passengers: '567',
-      max_atmosphering_speed: '1000',
-      cargo_capacity: '1222',
-      consumables: '76'
-    };
+  onOpenVehicle(id: number): void {
+    this.vehicleService.getVehicleById(id).subscribe((vehicle: Vehicle) => {
+      const modal = this.modalServices.open(VehicleDetailModalComponent);
+      modal.componentInstance.object = {
+        name: vehicle.name,
+        model: vehicle.model,
+        vehicle_class: vehicle.vehicle_class,
+        manufacturer: vehicle.manufacturer,
+        length: vehicle.length,
+        cost_in_credits: vehicle.cost_in_credits,
+        crew: vehicle.crew,
+        passengers: vehicle.passengers,
+        max_atmosphering_speed: vehicle.max_atmosphering_speed,
+        cargo_capacity: vehicle.cargo_capacity,
+        consumables: vehicle.consumables
+      };
+    });
   }
 
 }

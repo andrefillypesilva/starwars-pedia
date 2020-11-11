@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Observable } from 'rxjs';
 import { ResultCard } from 'src/app/models/interfaces/result-card';
+import { Starship } from 'src/app/models/interfaces/starship';
 import { StarshipService } from '../../services/starship.service';
 import { StarshipDetailModalComponent } from './starship-detail-modal/starship-detail-modal.component';
 
@@ -14,31 +15,33 @@ export class StarshipsComponent implements OnInit {
   public starships$: Observable<ResultCard[]>;
 
   constructor(
-    private readonly sharshipService: StarshipService,
+    private readonly starshipService: StarshipService,
     private readonly modalService: NgbModal
   ) { }
 
   ngOnInit(): void {
-    this.starships$ = this.sharshipService.getStarships();
+    this.starships$ = this.starshipService.getStarships();
   }
 
-  onOpenStarship(): void {
-    const modal = this.modalService.open(StarshipDetailModalComponent);
-    modal.componentInstance.object = {
-      name: 'Millenium Falcon',
-      model: 'NHGSGG',
-      starship_class: 'Sport',
-      manufacturer: '12',
-      cost_in_credits: '23',
-      length: '34',
-      crew: '55',
-      passengers: '100',
-      max_atmosphering_speed: '1000',
-      hyperdrive_rating: '3000',
-      MGLT: '213',
-      cargo_capacity: '655',
-      consumables: 'TRE'
-    };
+  onOpenStarship(id: number): void {
+    this.starshipService.getStarshipById(id).subscribe((starship: Starship) => {
+      const modal = this.modalService.open(StarshipDetailModalComponent);
+      modal.componentInstance.object = {
+        name: starship.name,
+        model: starship.model,
+        starship_class: starship.starship_class,
+        manufacturer: starship.manufacturer,
+        cost_in_credits: starship.cost_in_credits,
+        length: starship.length,
+        crew: starship.crew,
+        passengers: starship.passengers,
+        max_atmosphering_speed: starship.max_atmosphering_speed,
+        hyperdrive_rating: starship.hyperdrive_rating,
+        MGLT: starship.MGLT,
+        cargo_capacity: starship.cargo_capacity,
+        consumables: starship.consumables
+      };
+    });
   }
 
 }

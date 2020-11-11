@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { map, pluck } from 'rxjs/operators';
 import { ResultCard } from 'src/app/models/interfaces/result-card';
 import { Species } from 'src/app/models/interfaces/species';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -15,12 +16,12 @@ export class SpeciesService {
   ) { }
 
   getSpecies(): Observable<ResultCard[]> {
-    return this.http.get<ResultCard[]>('https://swapi.dev/api/species/')
+    return this.http.get<ResultCard[]>(`${environment.swapi}species/`)
     .pipe(
       pluck('results'),
       map((speciesArray: any[]) => {
         return speciesArray.map((species: Species) => ({
-          id: species.id,
+          id: parseInt(species.url.split('/')[5], 10),
           title: species.name,
           description: `From: ${species.homeworld} - Language: ${species.language}`,
           options: [`Skin Colors: ${species.skin_colors}`, `Hair Colors: ${species.hair_colors}`, `Eye Colors: ${species.eye_colors}`],
@@ -31,6 +32,6 @@ export class SpeciesService {
   }
 
   getSpeciesById(id: number): Observable<Species> {
-    return this.http.get<Species>('assets/mocks/species.json');
+    return this.http.get<Species>(`${environment.swapi}species/${id}`);
   }
 }
