@@ -5,6 +5,7 @@ import { Starship } from './starship';
 import { Vehicle } from './vehicle';
 
 export interface Film {
+    id: number;
     title: string;
     episode_id: string;
     opening_crawl: string;

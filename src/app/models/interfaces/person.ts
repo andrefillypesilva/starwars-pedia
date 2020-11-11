@@ -4,6 +4,7 @@ import { Starship } from './starship';
 import { Vehicle } from './vehicle';
 
 export interface Person {
+    id: number;
     name: string;
     birth_year: string;
     eye_color: string;

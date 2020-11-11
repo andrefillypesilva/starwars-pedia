@@ -2,6 +2,7 @@ import { Film } from './film';
 import { Person } from './person';
 
 export interface Vehicle {
+    id: number;
     name: string;
     model: string;
     vehicle_class: string;

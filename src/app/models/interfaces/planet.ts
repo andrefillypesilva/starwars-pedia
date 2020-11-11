@@ -2,6 +2,7 @@ import { Person } from './person';
 import { Film } from './film';
 
 export interface Planet {
+    id: number;
     name: string;
     diameter: string;
     rotation_period: string;

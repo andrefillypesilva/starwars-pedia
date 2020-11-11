@@ -2,6 +2,7 @@ import { Film } from './film';
 import { Person } from './person';
 
 export interface Species {
+    id: number;
     name: string;
     classification: string;
     designation: string;

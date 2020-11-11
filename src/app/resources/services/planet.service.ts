@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { Planet } from 'src/app/models/interfaces/planet';
 import { ResultCard } from 'src/app/models/interfaces/result-card';
 
 @Injectable({
@@ -13,6 +15,21 @@ export class PlanetService {
   ) { }
 
   getPlanets(): Observable<ResultCard[]> {
-    return this.http.get<ResultCard[]>('assets/mocks/results.json');
+    return this.http.get<ResultCard[]>('assets/mocks/planets.json')
+    .pipe(
+      map((planets: any[]) => {
+        return planets.map((planet: Planet) => ({
+          id: planet.id,
+          title: planet.name,
+          description: `Population: ${planet.population}`,
+          options: [`Diameter: ${planet.diameter}`, `Population: ${planet.population}`, `Orbital Period: ${planet.orbital_period}`],
+          url: planet.url
+        }));
+      })
+    );
+  }
+
+  getPlanetById(id: number): Observable<Planet> {
+    return this.http.get<Planet>('assets/mocks/planets.json');
   }
 }
