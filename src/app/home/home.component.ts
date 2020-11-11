@@ -32,4 +32,8 @@ export class HomeComponent implements OnInit {
 
   }
 
+  onGoToPage(url: string): void {
+    this.router.navigate([`/resources/${url}`]);
+  }
+
 }

@@ -3,9 +3,9 @@
 
     &__search-element {
         position: absolute;
-        top: 50%;
+        top: 60%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -60%);
     }
 
     &__form-element {
@@ -24,5 +24,61 @@
         }
 
         &--buttons-box { }
+    }
+}
+
+.section-resources {
+    &:hover &__figure {
+        transform: scale(0.92);
+    }
+
+    &__figure {
+        width: calc((100% - 5 * #{$gutter-horizontal-small})/6);
+        display: inline-block;
+        position: relative;
+        transition: all .2s;
+        backface-visibility: hidden;
+
+        &:not(:last-child) {
+            margin-right: $gutter-horizontal-small;
+        }
+
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.2) translateY(.5rem);
+            outline: 1rem solid $color-primary;
+            outline-offset: .5rem;
+            z-index: 999;
+        }
+
+        &:hover .section-resources__image {
+            filter: blur(1px);
+        }
+
+        &:hover .section-resources__caption {
+            opacity: 1;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &__image {
+        width: 100%;
+        height: 8rem;
+        transition: all .2s;
+        backface-visibility: hidden;
+        filter: grayscale(1);
+    }
+
+    &__caption {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        color: $color-white;
+        font-size: 1.5rem;
+        font-weight: 300;
+        opacity: 0;
+        transition: all .2s;
+        backface-visibility: hidden;
     }
 }
