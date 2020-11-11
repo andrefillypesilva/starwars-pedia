@@ -4,16 +4,14 @@
         font-weight: 400;
         line-height: 1.3;
 
-        a:link {
+        a:not([href]) {
             color: #1a0dab;
             text-decoration: none;
         }
 
-        a:visited {
-            color: #609;
-        }
-
-        a:hover {
+        a:not([href]):hover {
+            cursor: pointer;
+            color: #1a0dab;
             text-decoration: underline;
         }
     }
@@ -34,16 +32,14 @@
                 margin: 0 3rem;
             }
 
-            a:link {
+            a:not([href]) {
                 color: #1a0dab;
                 text-decoration: none;
             }
     
-            a:visited {
-                color: #609;
-            }
-    
-            a:hover {
+            a:not([href]):hover {
+                cursor: pointer;
+                color: #1a0dab;
                 text-decoration: underline;
             }
         }

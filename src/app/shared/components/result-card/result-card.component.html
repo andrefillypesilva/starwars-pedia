@@ -1,6 +1,6 @@
 <div class="result-card">
   <h3 class="result-card__title mb-small">
-    <a [routerLink]="" (click)="onOpenResult()">{{ object.title }}</a>
+    <a (click)="onOpenResult()">{{ object.title }}</a>
   </h3>
   <p class="result-card__description">
     {{ object.description | shortDescription }}
@@ -8,7 +8,7 @@
   <div class="result-card__links mt-small">
     <ul>
       <li *ngFor="let option of object.options">
-        <a [routerLink]="" (click)="onOpenResult()">{{ option }}</a>
+        <a (click)="onOpenResult()">{{ option }}</a>
       </li>
     </ul>
   </div>
