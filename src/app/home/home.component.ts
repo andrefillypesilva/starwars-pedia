@@ -10,6 +10,8 @@ export class HomeComponent implements OnInit {
 
   public formGroup: FormGroup;
 
+  private pages: string[] = ['films', 'people', 'planets', 'species', 'starships', 'vehicles'];
+
   constructor(
     private readonly router: Router,
     private readonly fb: FormBuilder
@@ -29,7 +31,8 @@ export class HomeComponent implements OnInit {
   }
 
   onGoToRandomPage(): void {
-
+    const index = Math.floor(Math.random() * 5);
+    this.router.navigate([`/resources/${this.pages[index]}`]);
   }
 
   onGoToPage(url: string): void {
