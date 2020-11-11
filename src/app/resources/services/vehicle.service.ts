@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, pluck } from 'rxjs/operators';
 import { ResultCard } from 'src/app/models/interfaces/result-card';
 import { Vehicle } from 'src/app/models/interfaces/vehicle';
 
@@ -15,8 +15,9 @@ export class VehicleService {
   ) { }
 
   getVehicles(): Observable<ResultCard[]> {
-    return this.http.get<ResultCard[]>('assets/mocks/vehicles.json')
+    return this.http.get<ResultCard[]>('https://swapi.dev/api/vehicles/')
     .pipe(
+      pluck('results'),
       map((vehicles: any[]) => {
         return vehicles.map((vehicle: Vehicle) => ({
           id: vehicle.id,

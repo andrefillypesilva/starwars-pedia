@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, pluck } from 'rxjs/operators';
 import { Film } from 'src/app/models/interfaces/film';
 import { ResultCard } from 'src/app/models/interfaces/result-card';
 
@@ -12,7 +12,8 @@ export class FilmService {
   constructor(private readonly http: HttpClient) {}
 
   getFilms(): Observable<ResultCard[]> {
-    return this.http.get<ResultCard[]>('assets/mocks/films.json').pipe(
+    return this.http.get<ResultCard[]>('https://swapi.dev/api/films/').pipe(
+      pluck('results'),
       map((films: any[]) => {
         return films.map((film: Film) => ({
           id: film.id,

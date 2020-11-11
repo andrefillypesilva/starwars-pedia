@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, pluck } from 'rxjs/operators';
 import { ResultCard } from 'src/app/models/interfaces/result-card';
 import { Species } from 'src/app/models/interfaces/species';
 
@@ -15,8 +15,9 @@ export class SpeciesService {
   ) { }
 
   getSpecies(): Observable<ResultCard[]> {
-    return this.http.get<ResultCard[]>('assets/mocks/species.json')
+    return this.http.get<ResultCard[]>('https://swapi.dev/api/species/')
     .pipe(
+      pluck('results'),
       map((speciesArray: any[]) => {
         return speciesArray.map((species: Species) => ({
           id: species.id,
