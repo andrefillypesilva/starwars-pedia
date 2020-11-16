@@ -11,7 +11,7 @@ export class PeopleComponent implements OnInit {
   ngOnInit(): void { }
 
   onOpenPerson(id: number): void {
-
+    // implement getById here
   }
 
 }
