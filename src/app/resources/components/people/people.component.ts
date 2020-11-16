@@ -10,7 +10,7 @@ export class PeopleComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  onOpenPerson(): void {
+  onOpenPerson(id: number): void {
 
   }
 
