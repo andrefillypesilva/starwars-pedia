@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -7,6 +7,8 @@ import { Router } from '@angular/router';
   templateUrl: './home.component.html'
 })
 export class HomeComponent implements OnInit {
+
+  @ViewChild('t') t: any;
 
   public formGroup: FormGroup;
 
@@ -27,6 +29,8 @@ export class HomeComponent implements OnInit {
   onSearch(): void {
     if (this.formGroup.valid) {
       this.router.navigate(['/resources'], { queryParams: { search: this.formGroup.get('search').value } });
+    } else {
+      this.t.open();
     }
   }
 

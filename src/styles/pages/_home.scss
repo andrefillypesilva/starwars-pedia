@@ -21,6 +21,19 @@
             input {
                 @extend .default-input;
             }
+
+            .danger-tooltip {
+                transform: translate(3rem, -34px) !important;
+
+                .tooltip-inner {
+                    background-color: rgba(#dc3545, .8);
+                    font-size: 1.2rem;
+                }
+
+                .arrow::before {
+                    border-top-color: rgba(#dc3545, .8);
+                }
+            }
         }
 
         &--buttons-box { }

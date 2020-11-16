@@ -9,7 +9,7 @@
     <div class="main-section__form-element mt-medium">
       <form [formGroup]="formGroup" (submit)="onSearch()">
         <div class="main-section__form-element--main-box">
-          <input type="text" formControlName="search" />
+          <input type="text" formControlName="search" #t="ngbTooltip" ngbTooltip="Preencha esse campo" [autoClose]="true" triggers="manual" tooltipClass="danger-tooltip" />
           <i class="icon-basic-magnifier" (click)="onSearch()"></i>
         </div>
         <div class="main-section__form-element--buttons-box mt-medium">
