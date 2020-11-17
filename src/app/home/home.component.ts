@@ -24,11 +24,18 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // this.formGroup.get('search').valueChanges.subscribe((value) => {
+    //   console.log('Do an interactive search here: ', value);
+    // });
   }
 
   onSearch(): void {
     if (this.formGroup.valid) {
       this.router.navigate(['/resources'], { queryParams: { search: this.formGroup.get('search').value } });
+    // } else if (this.formGroup.get('search').untouched) {
+      // this.onGoToRandomPage();
+      // this.formGroup.get('search').disable();
+      // console.log(this.formGroup.get('search').errors);
     } else {
       this.t.open();
     }
