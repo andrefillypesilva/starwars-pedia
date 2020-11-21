@@ -32,8 +32,8 @@ export class HomeComponent implements OnInit {
   onSearch(): void {
     if (this.formGroup.valid) {
       this.router.navigate(['/resources'], { queryParams: { search: this.formGroup.get('search').value } });
-    // } else if (this.formGroup.get('search').untouched) {
-      // this.onGoToRandomPage();
+    } else if (this.formGroup.get('search').untouched) {
+      this.onGoToRandomPage();
       // this.formGroup.get('search').disable();
       // console.log(this.formGroup.get('search').errors);
     } else {
