@@ -13,7 +13,7 @@ You will find a basic example of RxJS on `services` files (resources/services). 
 ## Reactive Forms examples
 You will find a basic example of Reactive Forms implementation on `home.component.ts` file. There is a method called `onSearch` that implement different rules based on form states. If it is valid it does the search, else if search input is untouched it redirects to a random page else it shows a tooltip with a message. Besides that, in the `onInit` method you will find a implementation of a listener to do something if value of search input changes.
 
-![Application Example](https://github.com/andrefillypesilva/starwars-pedia/blob/master/application_example.png?raw=true)
+![Application Example](https://github.com/andrefillypesilva/starwars-pedia/blob/main/application_example.png?raw=true)
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
