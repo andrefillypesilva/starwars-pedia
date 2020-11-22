@@ -5,7 +5,7 @@ Simple wiki application to consume Swapi.dev in a Angular RxJS and Reactive Form
 After clone this repository you will need to run `npm i` to install all dependencies.
 
 ## How to run
-To run this application you will need only run `ng g`.
+You can see this application online [here](https://andrefillypesilva.github.io/starwars-pedia/)! To run this application you will need only run `ng g`.
 
 ## RxJS examples
 You will find a basic example of RxJS on `services` files (resources/services). There are an implementation of `Observables` and an implementation of RxJS Operators to format data such as `pluck` (to extract data from an array) and `map` (to map some data into a known object format).
