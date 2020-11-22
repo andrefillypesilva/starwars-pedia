@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Observable } from 'rxjs';
 import { ResultCard } from 'src/app/models/interfaces/result-card';
 import { Species } from 'src/app/models/interfaces/species';
 import { SpeciesService } from '../../services/species.service';
@@ -12,15 +12,16 @@ import { SpeciesDetailModalComponent } from './species-detail-modal/species-deta
 })
 export class SpeciesComponent implements OnInit {
 
-  public species$: Observable<ResultCard[]>;
+  public species: ResultCard[];
 
   constructor(
     private readonly speciesService: SpeciesService,
-    private readonly modalService: NgbModal
+    private readonly modalService: NgbModal,
+    private readonly activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
-    this.species$ = this.speciesService.getSpecies();
+    this.species = this.activatedRoute.snapshot.data.species;
   }
 
   onOpenSpecies(id: number): void {

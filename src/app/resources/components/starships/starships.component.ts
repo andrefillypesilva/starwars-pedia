@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Observable } from 'rxjs';
 import { ResultCard } from 'src/app/models/interfaces/result-card';
 import { Starship } from 'src/app/models/interfaces/starship';
 import { StarshipService } from '../../services/starship.service';
@@ -12,15 +12,16 @@ import { StarshipDetailModalComponent } from './starship-detail-modal/starship-d
 })
 export class StarshipsComponent implements OnInit {
 
-  public starships$: Observable<ResultCard[]>;
+  public starships: ResultCard[];
 
   constructor(
     private readonly starshipService: StarshipService,
-    private readonly modalService: NgbModal
+    private readonly modalService: NgbModal,
+    private readonly activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
-    this.starships$ = this.starshipService.getStarships();
+    this.starships = this.activatedRoute.snapshot.data.starships;
   }
 
   onOpenStarship(id: number): void {

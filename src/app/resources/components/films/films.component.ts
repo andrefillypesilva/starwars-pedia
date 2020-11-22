@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Observable } from 'rxjs';
 import { Film } from 'src/app/models/interfaces/film';
 import { ResultCard } from 'src/app/models/interfaces/result-card';
 import { FilmService } from '../../services/film.service';
@@ -12,15 +12,16 @@ import { FilmDetailModalComponent } from './film-detail-modal/film-detail-modal.
 })
 export class FilmsComponent implements OnInit {
 
-  public films$: Observable<ResultCard[]>;
+  public films: ResultCard[];
 
   constructor(
     private readonly filmService: FilmService,
-    private readonly modalService: NgbModal
+    private readonly modalService: NgbModal,
+    private readonly activatedRouter: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
-    this.films$ = this.filmService.getFilms();
+    this.films = this.activatedRouter.snapshot.data.films;
   }
 
   onOpenFilm(id: number): void {

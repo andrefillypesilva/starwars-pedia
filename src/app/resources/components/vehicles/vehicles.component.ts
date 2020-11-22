@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Observable } from 'rxjs';
 import { ResultCard } from 'src/app/models/interfaces/result-card';
 import { Vehicle } from 'src/app/models/interfaces/vehicle';
 import { VehicleService } from '../../services/vehicle.service';
@@ -12,15 +12,16 @@ import { VehicleDetailModalComponent } from './vehicle-detail-modal/vehicle-deta
 })
 export class VehiclesComponent implements OnInit {
 
-  public vehicles$: Observable<ResultCard[]>;
+  public vehicles: ResultCard[];
 
   constructor(
     private readonly vehicleService: VehicleService,
-    private readonly modalServices: NgbModal
+    private readonly modalServices: NgbModal,
+    private readonly activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
-    this.vehicles$ = this.vehicleService.getVehicles();
+    this.vehicles = this.activatedRoute.snapshot.data.vehicles;
   }
 
   onOpenVehicle(id: number): void {

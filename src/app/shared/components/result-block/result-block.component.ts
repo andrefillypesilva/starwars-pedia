@@ -6,7 +6,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class ResultBlockComponent implements OnInit {
 
-  @Input() results$;
+  @Input() results;
 
   @Output() openResult = new EventEmitter<number>();
 

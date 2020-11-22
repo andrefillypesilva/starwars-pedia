@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Observable } from 'rxjs';
 import { Planet } from 'src/app/models/interfaces/planet';
 import { ResultCard } from 'src/app/models/interfaces/result-card';
 import { PlanetService } from '../../services/planet.service';
@@ -12,15 +12,16 @@ import { PlanetDetailModalComponent } from './planet-detail-modal/planet-detail-
 })
 export class PlanetsComponent implements OnInit {
 
-  public planets$: Observable<ResultCard[]>;
+  public planets: ResultCard[];
 
   constructor(
     private readonly planetService: PlanetService,
-    private readonly modalService: NgbModal
+    private readonly modalService: NgbModal,
+    private readonly activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
-    this.planets$ = this.planetService.getPlanets();
+    this.planets = this.activatedRoute.snapshot.data.planets;
   }
 
   onOpenPlanet(id: number): void {
