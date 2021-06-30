@@ -1,10 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { map, pluck } from 'rxjs/operators';
+import { map, pluck, tap } from 'rxjs/operators';
 import { Person } from 'src/app/models/interfaces/person';
 import { ResultCard } from 'src/app/models/interfaces/result-card';
 import { environment } from 'src/environments/environment';
+import { LogMessageService } from './log-message.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,10 +13,12 @@ import { environment } from 'src/environments/environment';
 export class PersonService {
 
   constructor(
-    private readonly http: HttpClient
+    private readonly http: HttpClient,
+    private readonly logger: LogMessageService
   ) { }
 
   getPeople(): Observable<ResultCard[]> {
+    this.logger.createLog();
     return this.http.get<ResultCard[]>(`${environment.swapi}people`)
     .pipe(
       pluck('results'),
@@ -27,7 +30,10 @@ export class PersonService {
           options: [`Skin Color: ${person.skin_color}`, `Hair Color: ${person.hair_color}`, `Eye Color: ${person.eye_color}`],
           url: person.url,
         }));
-      })
+      }),
+      // tap(() => {
+      //   this.http.get<ResultCard[]>(`${environment.swapi}people`).subscribe(() => {});
+      // })
     );
   }
 
