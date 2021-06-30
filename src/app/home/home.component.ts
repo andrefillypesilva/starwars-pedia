@@ -12,6 +12,8 @@ export class HomeComponent implements OnInit {
 
   public formGroup: FormGroup;
 
+  public textButton = 'May the Force be with me!';
+
   private pages: string[] = ['films', 'people', 'planets', 'species', 'starships', 'vehicles'];
 
   constructor(
@@ -42,8 +44,11 @@ export class HomeComponent implements OnInit {
   }
 
   onGoToRandomPage(): void {
-    const index = Math.floor(Math.random() * 5);
-    this.router.navigate([`/resources/${this.pages[index]}`]);
+    // const index = Math.floor(Math.random() * 5);
+    // this.router.navigate([`/resources/${this.pages[index]}`]);
+    setTimeout(() => {
+      this.textButton = 'Chewbacca';
+    }, 3000);
   }
 
   onGoToPage(url: string): void {
